@@ -62,45 +62,15 @@
   .social-grid{grid-template-columns:1fr}
 }
 
-
-/* --- MOBILE HERO COMPOSITION FIX --- */
 @media(max-width:768px){
-  .hero{
-    align-items:flex-start;
-    padding-top:132px;
-    min-height:780px;
-    background-position:center top;
-  }
-
-  .hero-content{
-    padding-top:70px;
-  }
-
-  .feature-card{
-    display:none !important;
-  }
-
-  .display{
-    font-size:clamp(54px,18vw,76px);
-    letter-spacing:.045em;
-  }
-
-  .hero-actions{
-    gap:14px;
-  }
-
-  .hero-actions .btn{
-    flex:1 1 145px;
-    padding:0 14px;
-  }
+  .hero{align-items:flex-start;padding-top:132px;min-height:780px;background-position:center top}
+  .hero-content{padding-top:84px}
+  .feature-card{display:none!important}
+  .display{font-size:clamp(54px,18vw,76px);letter-spacing:.045em}
+  .hero-actions{gap:14px}
+  .hero-actions .btn{flex:1 1 145px;padding:0 14px}
 }
-
 @media(max-width:420px){
-  .hero{
-    min-height:760px;
-  }
-
-  .hero-content{
-    padding-top:56px;
-  }
+  .hero{min-height:760px}
+  .hero-content{padding-top:70px}
 }
