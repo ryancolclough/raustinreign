@@ -1,1 +1,45 @@
 .music-hero{text-align:center;padding-top:72px}.tabs{display:flex;justify-content:center;gap:34px;margin:24px 0 48px}.tabs span{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);padding-bottom:10px;border-bottom:1px solid transparent}.tabs span.active{color:var(--gold);border-color:var(--gold)}.music-layout{display:grid;grid-template-columns:430px 1fr;gap:54px;align-items:start}.album-cover{border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}.tracklist{border:1px solid var(--line-soft);border-radius:12px;overflow:hidden;margin:28px 0}.track{display:grid;grid-template-columns:42px 1fr 64px;gap:10px;padding:15px 18px;border-bottom:1px solid var(--line-soft);color:var(--muted)}.track:last-child{border-bottom:0}.release-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:22px;margin-top:36px}.release-card img{border:1px solid var(--line);border-radius:12px;transition:.25s ease}.release-card:hover img{transform:translateY(-4px);box-shadow:0 18px 50px rgba(0,0,0,.55)}.release-card p{text-align:center;color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.12em}@media(max-width:980px){.music-layout{grid-template-columns:1fr}.album-cover{max-width:430px}.release-grid{grid-template-columns:repeat(2,1fr)}}
+
+
+/* --- MOBILE MUSIC PAGE FIX --- */
+@media(max-width:768px){
+  .music-hero{
+    padding-top:132px;
+    text-align:center;
+  }
+
+  .tabs{
+    gap:24px;
+    margin:20px 0 42px;
+    flex-wrap:wrap;
+  }
+
+  .album-cover{
+    width:100%;
+    max-width:100%;
+  }
+
+  .music-layout{
+    gap:34px;
+  }
+
+  .track{
+    grid-template-columns:34px 1fr 52px;
+    padding:14px 12px;
+  }
+
+  .release-grid{
+    grid-template-columns:1fr 1fr;
+    gap:16px;
+  }
+}
+
+@media(max-width:420px){
+  .tabs{
+    gap:18px;
+  }
+
+  .tabs span{
+    letter-spacing:.18em;
+  }
+}
