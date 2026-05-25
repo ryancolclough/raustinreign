@@ -268,14 +268,11 @@
   background-position:center top;
 }
 
-  .hero-content{
+.hero-content{
   margin-top:auto;
-
-  display:flex;
-  flex-direction:column;
-  gap:26px;
 }
-   .hero-copy{
+
+.hero-copy{
   display:flex;
   flex-direction:column;
   gap:26px;
