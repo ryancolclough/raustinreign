@@ -25,7 +25,7 @@
 }
 
 /* ========================================
-   GLOBAL RESET
+   GLOBAL RESET / SAFARI BACKGROUND FIX
 ======================================== */
 
 * {
@@ -33,14 +33,21 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
   max-width: 100%;
+  min-height: 100%;
   overflow-x: hidden;
+  scroll-behavior: smooth;
+  background: #020202;
 }
 
 body {
   margin: 0;
+  padding: 0;
   max-width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
   overflow-x: hidden;
 
   color: var(--text);
@@ -52,6 +59,17 @@ body {
     linear-gradient(180deg, #020202, #050505 42%, #020202);
 }
 
+/* Paint behind iPhone Safari top/bottom browser chrome */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -999;
+  pointer-events: none;
+  background: #020202;
+}
+
+/* Premium scanline / vignette overlay */
 body::before {
   content: "";
   position: fixed;
@@ -236,103 +254,7 @@ body.subpage main {
 .icon {
   width: 38px;
   height: 38px;
-/* ========================================
-   PREMIUM PLATFORM ICON SYSTEM
-======================================== */
 
-.nav-socials{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
-.platform-icon{
-  width:58px;
-  height:58px;
-
-  flex:0 0 58px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  border:1px solid rgba(201,164,107,.28);
-  border-radius:16px;
-
-  background:rgba(255,255,255,.03);
-  backdrop-filter:blur(12px);
-
-  transition:.25s ease;
-}
-
-.platform-icon img{
-  width:26px;
-  height:26px;
-
-  object-fit:contain;
-  display:block;
-}
-
-.platform-icon:hover{
-  transform:translateY(-2px);
-
-  border-color:rgba(226,196,139,.75);
-
-  box-shadow:
-    0 0 18px rgba(201,164,107,.18);
-}
-
-@media(max-width:768px){
-
-  .nav-socials{
-    gap:10px;
-  }
-
-  .platform-icon{
-    width:52px;
-    height:52px;
-
-    flex:0 0 52px;
-  }
-
-  .platform-icon img{
-    width:22px;
-    height:22px;
-  }
-
-}
-
-/* ========================================
-   LARGE VERSION ( HERO / FEATURED )
-======================================== */
-
-.platform-icon.large {
-  width: 72px;
-  height: 72px;
-}
-
-.platform-icon.large img {
-  width: 34px;
-  height: 34px;
-}
-
-/* ========================================
-   MOBILE
-======================================== */
-
-@media (max-width: 768px) {
-
-  .platform-icon {
-    width: 52px;
-    height: 52px;
-  }
-
-  .platform-icon img {
-    width: 24px;
-    height: 24px;
-  }
-
-}
   display: grid;
   place-items: center;
 
@@ -341,6 +263,70 @@ body.subpage main {
 
   background: rgba(255, 255, 255, .035);
   color: var(--text);
+}
+
+/* ========================================
+   PREMIUM PLATFORM ICON SYSTEM
+======================================== */
+
+.nav-socials {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.platform-icon {
+  width: 58px;
+  height: 58px;
+  flex: 0 0 58px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: 1px solid rgba(201, 164, 107, .28);
+  border-radius: 16px;
+
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.075), rgba(255,255,255,.018)),
+    rgba(255,255,255,.025);
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.13),
+    0 14px 34px rgba(0,0,0,.36);
+
+  transition: .25s ease;
+}
+
+.platform-icon img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  display: block;
+  opacity: .9;
+}
+
+.platform-icon:hover {
+  transform: translateY(-2px);
+  border-color: rgba(226,196,139,.75);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,.16),
+    0 0 18px rgba(201,164,107,.18),
+    0 18px 42px rgba(0,0,0,.42);
+}
+
+.platform-icon.large {
+  width: 72px;
+  height: 72px;
+  flex: 0 0 72px;
+}
+
+.platform-icon.large img {
+  width: 34px;
+  height: 34px;
 }
 
 /* ========================================
@@ -416,6 +402,21 @@ body.subpage main {
 
   .kicker {
     letter-spacing: .28em;
+  }
+
+  .nav-socials {
+    gap: 10px;
+  }
+
+  .platform-icon {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+  }
+
+  .platform-icon img {
+    width: 22px;
+    height: 22px;
   }
 }
 
