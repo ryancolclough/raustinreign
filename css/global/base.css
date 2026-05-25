@@ -240,54 +240,66 @@ body.subpage main {
    PREMIUM PLATFORM ICON SYSTEM
 ======================================== */
 
-.platform-icon {
-  width: 58px;
-  height: 58px;
-
-  display: grid;
-  place-items: center;
-
-  border: 1px solid rgba(201, 164, 107, .28);
-  border-radius: 16px;
-
-  background: rgba(255, 255, 255, .03);
-  backdrop-filter: blur(12px);
-
-  text-decoration: none;
-
-  transition:
-    transform .3s ease,
-    border-color .3s ease,
-    box-shadow .3s ease,
-    background .3s ease;
+.nav-socials{
+  display:flex;
+  align-items:center;
+  gap:14px;
 }
 
-.platform-icon img {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
+.platform-icon{
+  width:58px;
+  height:58px;
 
-  filter:
-    brightness(0)
-    saturate(100%)
-    invert(78%)
-    sepia(47%)
-    saturate(502%)
-    hue-rotate(356deg)
-    brightness(94%)
-    contrast(92%);
+  flex:0 0 58px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  border:1px solid rgba(201,164,107,.28);
+  border-radius:16px;
+
+  background:rgba(255,255,255,.03);
+  backdrop-filter:blur(12px);
+
+  transition:.25s ease;
 }
 
-.platform-icon:hover {
-  transform: translateY(-3px);
+.platform-icon img{
+  width:26px;
+  height:26px;
 
-  border-color: rgba(226, 196, 139, .75);
+  object-fit:contain;
+  display:block;
+}
 
-  background: rgba(255, 255, 255, .05);
+.platform-icon:hover{
+  transform:translateY(-2px);
+
+  border-color:rgba(226,196,139,.75);
 
   box-shadow:
-    0 0 24px rgba(201, 164, 107, .18),
-    inset 0 0 18px rgba(201, 164, 107, .05);
+    0 0 18px rgba(201,164,107,.18);
+}
+
+@media(max-width:768px){
+
+  .nav-socials{
+    gap:10px;
+  }
+
+  .platform-icon{
+    width:52px;
+    height:52px;
+
+    flex:0 0 52px;
+  }
+
+  .platform-icon img{
+    width:22px;
+    height:22px;
+  }
+
 }
 
 /* ========================================
