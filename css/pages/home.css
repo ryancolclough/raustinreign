@@ -287,7 +287,15 @@
     padding: 0 14px;
   }
 }
+.release-strip{
+  text-align:center;
+}
 
+.release-strip p{
+  max-width:30ch;
+  margin-left:auto;
+  margin-right:auto;
+}
 
 /* ========================================
    SMALL MOBILE
