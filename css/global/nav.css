@@ -106,22 +106,39 @@ body.home-page .site-header.open,
 ========================================= */
 
 .brand{
+
   display:flex;
+
   align-items:center;
-  gap:12px;
 
-  font-family:var(--serif);
+  text-decoration:none;
 
-  letter-spacing:.26em;
-  text-transform:uppercase;
+  flex-shrink:0;
 
-  color:var(--gold-2);
-
-  white-space:nowrap;
 }
 
 .brand img{
-  width:36px;
+
+  display:block;
+
+  width:auto;
+
+  height:54px;
+
+  object-fit:contain;
+
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+  .brand img{
+
+    height:34px;
+
+  }
+
 }
 
 
@@ -231,14 +248,16 @@ body.home-page .site-header.open,
     width:calc(100% - 32px);
   }
 
-  .brand{
-    letter-spacing:.18em;
-    font-size:15px;
-  }
+@media (max-width:420px){
 
   .brand img{
-    width:32px;
+
+    height:30px;
+
   }
+
+}
+
 
   .nav-toggle{
     display:block;
