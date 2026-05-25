@@ -9,8 +9,13 @@
   align-items: center;
 
   background-image:
-    linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.54) 44%, rgba(0,0,0,.88) 100%),
-    url('../../assets/home/hero-raustin-reignlight.png');
+  linear-gradient(
+    90deg,
+    rgba(0,0,0,.62) 0%,
+    rgba(0,0,0,.18) 42%,
+    rgba(0,0,0,.48) 100%
+  ),
+  url('../../assets/home/hero-raustin-reignlight.png');
 
   background-size: cover;
   background-position: center;
