@@ -287,3 +287,16 @@ body.home-page .site-header.open,
   }
 
 }
+/* FORCE HOMEPAGE HEADER TRANSPARENT AT TOP */
+body.home-page:not(.scrolled) .site-header:not(.open){
+  background:transparent !important;
+  border-bottom-color:transparent !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
+
+body.home-page:not(.scrolled) .site-header:not(.open)::before{
+  background:transparent !important;
+  backdrop-filter:none !important;
+  -webkit-backdrop-filter:none !important;
+}
