@@ -46,8 +46,9 @@
   margin-top: 32px;
 }
 
-.platform-minis {
-  margin-top: 22px;
+.platform-minis{
+  position:relative;
+  z-index:2;
 }
 
 
