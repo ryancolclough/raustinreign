@@ -74,21 +74,14 @@ body.home-page .site-header::before{
    SCROLLED / OPEN STATES
 ========================================= */
 
-/* nav becomes glass after scrolling */
-
 body.home-page.scrolled .site-header,
 body.home-page .site-header.open,
 .site-header.open{
-
   background:rgba(2,2,2,.88);
-
   border-bottom:1px solid var(--line-soft);
-
   backdrop-filter:blur(18px);
   -webkit-backdrop-filter:blur(18px);
 }
-
-
 /* =========================================
    NAV WRAPPER
 ========================================= */
