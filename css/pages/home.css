@@ -276,4 +276,35 @@
   .hero {
     min-height: 100svh;
   }
+
+} 
+
+/* =========================
+   MOBILE NAV TRANSPARENCY
+========================= */
+
+@media (max-width:768px){
+
+  .site-header{
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    z-index:999;
+    background:rgba(0,0,0,.30);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(202,163,92,.08);
+
+    transition:
+      background .28s ease,
+      border-color .28s ease,
+      backdrop-filter .28s ease;
+  }
+
+  body.scrolled .site-header{
+    background:rgba(0,0,0,.72);
+    border-bottom:1px solid rgba(202,163,92,.22);
+  }
+
 }
