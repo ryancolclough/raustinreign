@@ -102,15 +102,16 @@
 </div>
 
           <div class="hero-actions">
-            <div class="listen-stack">
-              <button class="btn gold" data-audio-toggle type="button" data-audio-label="Listen Now" aria-controls="audio-featured" aria-pressed="false" aria-label="Listen Now: In the Quiet x Still Moving (Mashup) x Becoming My Own (Mashup)">
-                Listen Now
-              </button>
-              <p class="micro">In the Quiet x Still Moving (Mashup) x Becoming My Own (Mashup)</p>
-              <button class="btn" data-audio-toggle type="button" data-audio-label="M.I.M.E. x Raustin Reign Collab" aria-controls="audio-mime" aria-pressed="false">
-                M.I.M.E. x Raustin Reign Collab
-              </button>
-            </div>
+            <a class="btn gold" href="links.html">Listen Now</a>
+
+            <button class="btn quiet" data-audio-toggle type="button" aria-controls="audio-quiet">
+              <span>In the Quiet</span>
+              <span>2026 Release</span>
+            </button>
+
+            <button class="btn" data-audio-toggle type="button">
+              M.I.M.E. x Raustin Reign Collab
+            </button>
 
             <div class="icon-row platform-minis">
               <span class="icon">♬</span>
@@ -119,8 +120,8 @@
             </div>
           </div>
 
-          <audio id="audio-featured" preload="metadata" playsinline webkit-playsinline src="assets/audio/raustin.in.the.quiet.x.still.moving.x.becoming.my.own.mashup.mp3"></audio>
-          <audio id="audio-mime" preload="metadata" playsinline webkit-playsinline src="assets/audio/raustin.mime.collab.mp3"></audio>
+          <audio id="audio-quiet" preload="none" playsinline webkit-playsinline src="assets/audio/raustin.in.the.quiet.x.still.moving.x.becoming.my.own.mashup.mp3"></audio>
+          <audio id="preview-audio" src="assets/audio/raustin.mime.collab.mp3"></audio>
         </div>
 
         <aside class="feature-card panel">
