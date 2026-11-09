@@ -51,6 +51,26 @@
   z-index:2;
 }
 
+.listen-stack{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:12px;
+  width:min(100%,640px);
+}
+
+.listen-stack .micro{
+  margin:0;
+  width:100%;
+  line-height:1.7;
+}
+
+.listen-stack .btn{
+  max-width:100%;
+  height:auto;
+  white-space:normal;
+}
+
 
 /* ========================================
    FEATURE CARD
@@ -297,6 +317,12 @@
   .hero-actions .btn {
     flex: 1 1 145px;
     padding: 0 14px;
+  }
+
+  .hero-actions .listen-stack .btn {
+    flex: 0 0 auto;
+    width: auto;
+    padding: 0 18px;
   }
 }
 .release-strip{

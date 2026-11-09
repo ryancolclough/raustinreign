@@ -11,13 +11,36 @@ updateHeader();
 const toggle=document.querySelector('.nav-toggle');
 if(toggle&&header){toggle.addEventListener('click',()=>header.classList.toggle('open'))}
 
-const audioBtn=document.querySelector('[data-audio-toggle]');
-const audio=document.querySelector('#preview-audio');
-if(audioBtn&&audio){
+document.querySelectorAll('[data-audio-toggle]').forEach((audioBtn)=>{
+  const audio=document.getElementById(audioBtn.getAttribute('aria-controls'));
+  const label=audioBtn.getAttribute('data-audio-label')||audioBtn.textContent.trim();
+  if(!audio) return;
+  const setIdle=()=>{
+    audioBtn.textContent=label;
+    audioBtn.setAttribute('aria-pressed','false');
+  };
   audioBtn.addEventListener('click',async()=>{
+    document.querySelectorAll('audio').forEach((other)=>{
+      if(other===audio||other.paused) return;
+      other.pause();
+      const otherBtn=document.querySelector('[aria-controls="'+other.id+'"]');
+      if(otherBtn){
+        otherBtn.textContent=otherBtn.getAttribute('data-audio-label');
+        otherBtn.setAttribute('aria-pressed','false');
+      }
+    });
     try{
-      if(audio.paused){await audio.play();audioBtn.textContent='Pause Preview'}
-      else{audio.pause();audioBtn.textContent='Play Preview'}
-    }catch(e){audioBtn.textContent='Add MP3 File'}
-  })
-}
+      if(audio.paused){
+        await audio.play();
+        audioBtn.textContent='Pause';
+        audioBtn.setAttribute('aria-pressed','true');
+      }else{
+        audio.pause();
+        setIdle();
+      }
+    }catch(e){
+      setIdle();
+    }
+  });
+  audio.addEventListener('ended',setIdle);
+});
